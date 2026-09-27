@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Название продукта — презентация</title>
+  <meta name="description" content="Краткое описание продукта">
+
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    /* Свои стили. При росте проекта вынести в css/style.css */
+    :root {
+      --brand: #0d6efd;      /* основной цвет — заменить */
+      --brand-dark: #0a58ca;
+    }
+    html { scroll-behavior: smooth; }
+    section { padding: 5rem 0; scroll-margin-top: 56px; }
+    .section-alt { background: var(--bs-tertiary-bg); }
+    .hero { min-height: 80vh; display: flex; align-items: center; }
+    .placeholder-box {
+      background: var(--bs-secondary-bg);
+      border: 1px dashed var(--bs-border-color);
+      border-radius: .5rem;
+      min-height: 200px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--bs-secondary-color);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Навигация -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top border-bottom">
+    <div class="container">
+      <a class="navbar-brand fw-semibold" href="#top">Логотип</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+              aria-controls="mainNav" aria-expanded="false" aria-label="Открыть меню">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">О продукте</a></li>
+          <li class="nav-item"><a class="nav-link" href="#features">Преимущества</a></li>
+          <li class="nav-item"><a class="nav-link" href="#how">Как работает</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacts">Контакты</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main id="top">
+
+    <!-- 1. Первый экран -->
+    <section class="hero pt-5">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <h1 class="display-5 fw-bold mb-3">Название продукта</h1>
+            <p class="lead mb-4">Одно-два предложения о том, что это и кому помогает.</p>
+            <a href="#about" class="btn btn-primary btn-lg me-2">Узнать больше</a>
+            <a href="#contacts" class="btn btn-outline-secondary btn-lg">Связаться</a>
+          </div>
+          <div class="col-lg-6">
+            <div class="placeholder-box">Изображение продукта</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. О продукте -->
+    <section id="about" class="section-alt">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-md-5">
+            <h2 class="fw-bold">О продукте</h2>
+          </div>
+          <div class="col-md-7">
+            <p>Описание продукта. Абзац текста.</p>
+            <p>Второй абзац текста.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Преимущества: 3 колонки на ПК, 1 на телефоне -->
+    <section id="features">
+      <div class="container">
+        <h2 class="fw-bold mb-5">Преимущества</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col">
+            <h3 class="h5">Преимущество 1</h3>
+            <p class="text-body-secondary">Короткое пояснение.</p>
+          </div>
+          <div class="col">
+            <h3 class="h5">Преимущество 2</h3>
+            <p class="text-body-secondary">Короткое пояснение.</p>
+          </div>
+          <div class="col">
+            <h3 class="h5">Преимущество 3</h3>
+            <p class="text-body-secondary">Короткое пояснение.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Как работает: текст + изображение -->
+    <section id="how" class="section-alt">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6 order-lg-2">
+            <h2 class="fw-bold mb-3">Как работает</h2>
+            <ol>
+              <li>Шаг первый</li>
+              <li>Шаг второй</li>
+              <li>Шаг третий</li>
+            </ol>
+          </div>
+          <div class="col-lg-6 order-lg-1">
+            <div class="placeholder-box">Схема или фото</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Контакты -->
+    <section id="contacts">
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-8">
+            <h2 class="fw-bold mb-3">Контакты</h2>
+            <p class="lead mb-4">Призыв к действию.</p>
+            <a href="mailto:email@example.com" class="btn btn-primary btn-lg me-2">Написать</a>
+            <a href="https://t.me/username" target="_blank" rel="noopener" class="btn btn-outline-secondary btn-lg">Telegram</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="py-4 border-top">
+    <div class="container text-center text-body-secondary small">
+      © 2026 Название компании
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5.3 JS (с Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Закрывать мобильное меню после нажатия на пункт
+    document.querySelectorAll('#mainNav .nav-link').forEach(function (link) {
+      link.addEventListener('click', function () {
+        var nav = document.getElementById('mainNav');
+        if (nav.classList.contains('show')) bootstrap.Collapse.getOrCreateInstance(nav).hide();
+      });
+    });
+  </script>
+</body>
+</html>
