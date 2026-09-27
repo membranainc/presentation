@@ -114,3 +114,50 @@ h1, h2, h3, h4, h5, h6 { color: var(--heading); }
 @media (max-width: 991.98px) {
   .hero-img { max-width: 420px; max-height: 45svh; }
 }
+
+/* ---------- Общий заголовок секции ---------- */
+.section-title {
+  font-weight: 800;
+  font-size: clamp(1.75rem, 2.6vw, 3rem);   /* ~48px при 1920 */
+  line-height: 1.15;
+  margin-bottom: clamp(2rem, 5vh, 4rem);
+}
+
+/* ---------- ЭКРАН 2: 3 карточки ---------- */
+.why-card {
+  height: 100%;
+  background: rgba(255, 255, 255, .55);
+  border-radius: 1.25rem;
+  padding: clamp(1.75rem, 2.5vw, 3rem) clamp(1.5rem, 2vw, 2.5rem);
+  text-align: center;
+}
+.why-title {
+  font-weight: 700;
+  font-size: clamp(1.25rem, 1.45vw, 1.75rem);
+  margin-bottom: .75rem;
+}
+.why-text {
+  font-size: clamp(1rem, 1.05vw, 1.25rem);
+  line-height: 1.5;
+  margin: 0 auto;
+  max-width: 22em;
+}
+
+/* Экран 2: крупный заголовок и фото под карточками */
+.why-heading {
+  font-weight: 900;
+  font-size: clamp(2.25rem, 3.8vw, 4.5rem);   /* ~72px при 1920 */
+  letter-spacing: -.015em;
+  margin-bottom: clamp(1.5rem, 4vh, 3rem);
+}
+.why-card { padding-top: clamp(1.5rem, 2vw, 2.5rem); padding-bottom: clamp(1.5rem, 2vw, 2.5rem); }
+.why-img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: clamp(260px, 38vh, 440px);   /* вписываем в один экран */
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  margin: clamp(1.5rem, 4vh, 3rem) auto 0;
+  border-radius: 1rem;
+}
