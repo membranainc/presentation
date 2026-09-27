@@ -151,13 +151,59 @@ h1, h2, h3, h4, h5, h6 { color: var(--heading); }
   margin-bottom: clamp(1.5rem, 4vh, 3rem);
 }
 .why-card { padding-top: clamp(1.5rem, 2vw, 2.5rem); padding-bottom: clamp(1.5rem, 2vw, 2.5rem); }
-.why-img {
-  display: block;
-  width: auto;
-  max-width: 100%;
-  height: clamp(260px, 38vh, 440px);   /* вписываем в один экран */
-  aspect-ratio: 1 / 1;
-  object-fit: contain;
-  margin: clamp(1.5rem, 4vh, 3rem) auto 0;
-  border-radius: 1rem;
+
+/* ---------- ЭКРАН 3: Цифры ---------- */
+.stats {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
+.stats li {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0 .35em;
+  line-height: 1.05;
+  padding: clamp(.6rem, 1.6vh, 1.1rem) 0;
+  border-bottom: 1px solid rgba(1, 129, 18, .25);
+}
+.stats li:last-child { border-bottom: 0; }
+@media (max-width: 991.98px) { .stats li { justify-content: center; } }
+.stat-num {
+  color: var(--heading);
+  font-weight: 900;
+  font-size: clamp(2.5rem, 4.4vw, 5.25rem);   /* ~84px при 1920 */
+  letter-spacing: -.02em;
+}
+.stat-label {
+  font-weight: 600;
+  font-size: clamp(1.25rem, 1.9vw, 2.25rem);  /* ~36px при 1920 */
+}
+.stats-note {
+  margin: 1rem 0 0;
+  font-size: clamp(.8rem, .8vw, .95rem);
+}
+
+/* ---------- ЭКРАН 3: Цифры ---------- */
+.stats {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+}
+.stats li {
+  line-height: 1.05;
+  padding: clamp(.5rem, 1.4vh, 1rem) 0;
+}
+.stats li + li { border-top: 1px solid rgba(1, 129, 18, .25); }
+.stat-num {
+  font-weight: 900;
+  font-size: clamp(2.5rem, 4.4vw, 5.25rem);   /* ~84px при 1920 */
+  color: var(--heading);
+  letter-spacing: -.02em;
+}
+.stat-label {
+  font-weight: 700;
+  font-size: clamp(1.25rem, 1.9vw, 2.25rem);  /* ~36px при 1920 */
+  margin-left: .25em;
+}
+.stats-note { margin: 0; font-size: clamp(.85rem, .85vw, 1rem); }
