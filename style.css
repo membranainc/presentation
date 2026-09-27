@@ -1,0 +1,116 @@
+/* ==========================================================
+   MealTimes — Essential Acids
+   Основа: 1920×1080, размеры в пропорциях (vw/vh + clamp)
+   ========================================================== */
+
+:root {
+  --bg: #cfd5d1;          /* основной фон сайта */
+  --text: #000000;        /* описания */
+  --heading: #018112;     /* заголовки */
+  --heading-dark: #016a0f;/* hover кнопки */
+  --nav-h: clamp(56px, 7.4vh, 80px); /* высота меню (80px при 1080) */
+
+  --bs-body-font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --bs-body-bg: var(--bg);
+  --bs-body-color: var(--text);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--bs-body-font-family);
+}
+
+h1, h2, h3, h4, h5, h6 { color: var(--heading); }
+
+/* ---------- Меню ---------- */
+.site-nav {
+  height: var(--nav-h);
+  background: rgba(207, 213, 209, .92);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.site-logo {
+  height: clamp(28px, 3.7vh, 40px); /* 40px при 1080 */
+  width: auto;
+  display: block;
+}
+
+/* ---------- «Экран»: одна высота окна ---------- */
+.screen {
+  min-height: 100vh;
+  min-height: 100svh; /* корректная высота на телефонах */
+  padding-top: calc(var(--nav-h) + 2rem);
+  padding-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  scroll-margin-top: 0;
+}
+.screen > .container { width: 100%; }
+
+/* ---------- ЭКРАН 1 ---------- */
+.hero-title {
+  font-weight: 800;
+  font-size: clamp(2rem, 3.4vw, 4rem);   /* ~64px при 1920 */
+  line-height: 1.1;
+  letter-spacing: -.01em;
+  margin-bottom: 1.5rem;
+  max-width: 14em;
+}
+.hero-lead {
+  font-size: clamp(1.05rem, 1.25vw, 1.5rem); /* ~24px при 1920 */
+  line-height: 1.5;
+  max-width: 30em;
+  margin-bottom: 2.25rem;
+}
+@media (max-width: 991.98px) {
+  .hero-title, .hero-lead { margin-left: auto; margin-right: auto; }
+}
+
+.btn-brand {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: var(--heading);
+  --bs-btn-border-color: var(--heading);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--heading-dark);
+  --bs-btn-hover-border-color: var(--heading-dark);
+  --bs-btn-active-bg: var(--heading-dark);
+  --bs-btn-focus-shadow-rgb: 1, 129, 18;
+  font-weight: 700;
+  border-radius: 50rem;
+  padding: .9em 2.2em;
+  font-size: clamp(1rem, 1.05vw, 1.25rem);
+}
+
+.hero-facts {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem 0;
+  font-weight: 500;
+  font-size: clamp(.85rem, .85vw, 1rem);
+}
+@media (max-width: 991.98px) { .hero-facts { justify-content: center; } }
+.hero-facts li + li::before {
+  content: "·";
+  margin: 0 .6em;
+  color: var(--heading);
+  font-weight: 800;
+}
+
+/* Фото: квадрат 1080×1080, ограничиваем по высоте экрана */
+.hero-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: calc(100svh - var(--nav-h) - 4rem);
+  object-fit: contain;
+  margin-inline: auto;
+}
+@media (max-width: 991.98px) {
+  .hero-img { max-width: 420px; max-height: 45svh; }
+}
